@@ -52,7 +52,7 @@ Content-Length: %d
 
 def MovePageIndex(Client):
     header = """HTTP/1.1 301 Moved Permanently
-Location: http://127.0.0.1:8080/index.html
+Location: http://127.0.0.1:8081/index.html
 
 """
     print("---------------HTTP respone move Index.html: ")
@@ -72,7 +72,7 @@ def MoveHomePage(Server, Client, Request):
         MovePageIndex(Client)
         Server.close()
         # Trả về file index.html cho client
-        Server = CreateServer("localhost", 8080)
+        Server = CreateServer("localhost", 8081)
         Client, Request = ReadHTTPRequest(Server)
         print("------------------HTTP request: ")
         print(Request)
@@ -208,7 +208,7 @@ if __name__ == "__main__":
         MoveHomePage(Server, Client, Request)
         # Phần 2 xử lý post user name va pass lên Server
         # 1. Create Server Socket
-        Server = CreateServer("localhost", 8080)
+        Server = CreateServer("localhost", 10000)
         # 2. Client connect Server + 3. Read HTTP Request
         Client, Request = ReadHTTPRequest(Server)
         print("----------------HTTP requset: ")
