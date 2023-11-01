@@ -180,17 +180,17 @@ def SendInfo(Server, Client):
     print("HTTP Request: ")
     print(Request)
     if "GET /image1.jpg HTTP/1.1" in Request:
-        SendImg(Client, "image1.jpg")
+        SendImg(Client, "pic_2.jpg")
     if "GET /image2.jpg HTTP/1.1" in Request:
-        SendImg(Client, "image2.jpg")
+        SendImg(Client, "pic_4.jpg")
 
     Client, Request = ReadHTTPRequest(Server)
     print("HTTP Request: ")
     print(Request)
     if "GET /image1.jpg HTTP/1.1" in Request:
-        SendImg(Client, "image1.jpg")
+        SendImg(Client, "pic_2.jpg")
     if "GET /image2.jpg HTTP/1.1" in Request:
-        SendImg(Client, "image2.jpg")
+        SendImg(Client, "pic_4.jpg")
     Server.close()
     # image 2
 
